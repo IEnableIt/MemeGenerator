@@ -18,6 +18,10 @@ const TextImage = () => {
     meme.dispatch({ type: 'UPDATE_TOP', payload: e.target.value })
   }
 
+  const handleBottomText = (e) => {
+    meme.dispatch({ type: 'UPDATE_BOTTOM', payload: e.target.value })
+  }
+
   // Render
   return (
     <TextWrapper className={meme.state.imageSelected ? 'active' : ''}>
