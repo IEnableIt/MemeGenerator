@@ -21,7 +21,32 @@ const TextImage = () => {
   const handleBottomText = (e) => {
     meme.dispatch({ type: 'UPDATE_BOTTOM', payload: e.target.value })
   }
+  const handleTextPos = (e, pos) => {
+    if (pos === 'top') {
+      meme.dispatch({ type: 'UPDATE_TOP_POS', payload: e.target.value })
+    } else {
+      meme.dispatch({
+        type: 'UPDATE_BOTTOM_POS',
+        payload: e.target.value,
+      })
+    }
+  }
 
+  const handleTextSize = (e, pos) => {
+    if (pos === 'top') {
+      meme.dispatch({ type: 'UPDATE_TOP_SIZE', payload: e.target.value })
+    } else {
+      meme.dispatch({
+        type: 'UPDATE_BOTTOM_SIZE',
+        payload: e.target.value,
+      })
+    }
+  }
+
+  const handleTextOutside = (e) => {
+    console.log(e.target.value)
+    meme.dispatch({ type: 'TEXT_OUTSIDE' })
+  }
   // Render
   return (
     <TextWrapper className={meme.state.imageSelected ? 'active' : ''}>
